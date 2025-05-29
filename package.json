@@ -1,0 +1,28 @@
+{
+  "name": "coffecart.taqc.js.cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UA-1378-TAQC/coffecart.taqc.js.cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/UA-1378-TAQC/coffecart.taqc.js.cypress/issues"
+  },
+  "homepage": "https://github.com/UA-1378-TAQC/coffecart.taqc.js.cypress#readme",
+  "devDependencies": {
+    "@types/cypress": "^0.1.6",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.15.24",
+    "cypress": "^14.4.0",
+    "typescript": "^5.8.3"
+  }
+}
