@@ -27,20 +27,13 @@ jobs:
         run: npx cypress run
 
       - name: Generate Allure Report
-        run: |
-          npm run allure:generate
+        run: npm run allure:generate
 
       - name: Upload Allure Report Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: allure-report
           path: allure-report
-
-      - name: Checkout gh-pages branch
-        uses: actions/checkout@v4
-        with:
-          ref: gh-pages
-          path: gh-pages
 
       - name: Deploy Allure Report to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
