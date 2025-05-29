@@ -1,8 +1,11 @@
 import { defineConfig } from "cypress";
+import allureWriter from '@shelex/cypress-allure-plugin/writer';
 
 export default defineConfig({
   e2e: {
-    specPattern: 'tests',
-    supportFile: false,
+    setupNodeEvents(on, config) {
+      allureWriter(on, config);
+      return config;
+    },
   },
 });
