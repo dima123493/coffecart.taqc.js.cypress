@@ -9,6 +9,7 @@ const successModal = new SuccessfulModal();
 cy.allure().feature('Verify Payment Form Accepts Valid Inputs Feature');
 describe('Verify Payment Form Accepts Valid Inputs', () => {
     beforeEach(() => {
+        cy.allure().step('Visit website', true);
         menuPage.visit();
     });
 
