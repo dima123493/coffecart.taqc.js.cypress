@@ -1,6 +1,6 @@
 import {MenuPage} from '@pages/menu-page';
-import {PaymentModal} from '@modal/payment_detail_modal';
-import {SuccessfulModal} from '@modal/successful_modal';
+import {PaymentModal} from '@modal/payment-detail-modal';
+import {SuccessfulModal} from '@modal/successful-modal';
 
 const menuPage = new MenuPage();
 const paymentModal = new PaymentModal();
