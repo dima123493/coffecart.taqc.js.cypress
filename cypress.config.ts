@@ -9,6 +9,7 @@ export default defineConfig({
       allureWriter(on, config);
       return config;
     },
+    baseUrl: 'https://coffee-cart.app/',
     env: {
       allure: true,
       allureReuseAfterSpec: true,
