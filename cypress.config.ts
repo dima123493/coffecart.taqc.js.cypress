@@ -2,7 +2,16 @@ import { defineConfig } from "cypress";
 
 export default defineConfig({
   e2e: {
-    specPattern: 'tests',
-    supportFile: 'cypress/support/e2e.ts'
+    specPattern: 'tests/**/*.cy.{js,ts,jsx,tsx}',
+    supportFile: 'cypress/support/e2e.ts',
+    setupNodeEvents(on, config) {
+      allureWriter(on, config);
+      return config;
+    },
+    env: {
+      allure: true,
+      allureReuseAfterSpec: true,
+      allureResultsPath: 'allure-results'
+    }
   },
 });
