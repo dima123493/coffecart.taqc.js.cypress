@@ -48,8 +48,8 @@ cp .env.example .env
 | `npm run cy:run:headed`                  | Runs all tests in **headed** mode (visible browser).                             |
 | `npm run cy:run:spec -- "path/to/file"`  | Runs a specific spec file. Example: `npm run cy:run:spec -- tests/sample.cy.ts"` |
 | `npm test`                               | Alias for running `cypress run`.                                                 |
-| `npm run allure:generate`                | Generates Allure report in `allure-report` folder.                               |
-| `npm run allure:open`                    | Opens Allure report in the browser.                                              |
+
+For Allure reporting commands, see the [Allure Report Integration](#-allure-report-integration) section below.
 
 ## 📁 Project Structure
 ```aiignore
@@ -59,12 +59,47 @@ coffecart.taqc.js.cypress/
 │   ├── support/            # Custom commands and config overrides
 │   └── fixtures/           # Test data and mock responses
 │
+├── tests/                  # Test files using the .cy.ts extension
+│
+├── allure-results/         # Generated during test execution (contains raw test data)
+├── allure-report/          # Generated HTML report (created from allure-results)
+│
 ├── .env.example            # Sample environment variables file
 ├── cypress.config.ts       # Cypress configuration file (TypeScript)
 ├── package.json            # Project metadata and dependencies
 └── README.md               # Project documentation
 ```
 
-## 📊 (Optional) Allure Report Integration
+## 📊 Allure Report Integration
 
-Allure reporting is already pre-configured.
+Allure reporting is already pre-configured in this project. The Allure reporting workflow consists of two main steps:
+
+1. **Test Execution**: When tests are run, test results are automatically collected in the `allure-results` directory.
+2. **Report Generation**: After test execution, you can generate a visual HTML report from these results.
+
+### Allure Workflow
+
+```
+Test Execution → allure-results/ → Report Generation → allure-report/
+```
+
+### Commands
+
+| Command                  | Description                                                           |
+|--------------------------|-----------------------------------------------------------------------|
+| `npm run cy:run`         | Runs tests and generates Allure results in the `allure-results` folder |
+| `npm run allure:generate`| Generates HTML report from results in the `allure-report` folder      |
+| `npm run allure:open`    | Opens the generated report in your default browser                    |
+
+### Typical Usage
+
+```bash
+# Run tests (generates allure-results/)
+npm run cy:run
+
+# Generate and open the report
+npm run allure:generate
+npm run allure:open
+```
+
+Both `allure-results/` and `allure-report/` directories are excluded from version control in the `.gitignore` file as they contain generated content.

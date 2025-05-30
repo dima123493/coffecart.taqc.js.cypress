@@ -9,5 +9,10 @@ export default defineConfig({
       allureWriter(on, config);
       return config;
     },
+    env: {
+      allure: true,
+      allureReuseAfterSpec: true,
+      allureResultsPath: 'allure-results'
+    }
   },
 });
