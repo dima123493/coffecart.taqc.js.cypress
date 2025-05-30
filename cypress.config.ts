@@ -1,5 +1,4 @@
 import { defineConfig } from 'cypress';
-// @ts-ignore
 import allureWriter from '@shelex/cypress-allure-plugin/writer';
 
 export default defineConfig({

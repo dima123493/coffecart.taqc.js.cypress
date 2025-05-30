@@ -1,10 +1,5 @@
-
-// @ts-ignore
 import {CartPage} from '@pages/cart-page';
-// @ts-ignore
 import {MenuPage} from '@pages/menu-page';
-
-
 
 describe('Increase Items in Cart', () => {
     const menuPage = new MenuPage();
