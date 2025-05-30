@@ -40,7 +40,7 @@ cp .env.example .env
 ```
  Edit the `.env` file to fill in the actual values
 
-🧪 Running Tests
+## 🧪 Running Tests
 | Command                                 | Description                                                                            |
 | --------------------------------------- | -------------------------------------------------------------------------------------- |
 | `npx cypress open`                      | Opens Cypress Test Runner UI. Choose "E2E Testing" and start tests.                    |
@@ -49,7 +49,7 @@ cp .env.example .env
 | `npx cypress run --spec "path/to/file"` | Runs a specific spec file. Example: `npx cypress run --spec "cypress/e2e/login.cy.ts"` |
 | `npm test`                              | Alias for running `npx cypress run`.                                                   |
 
-📁 Project Structure
+## 📁 Project Structure
 ```aiignore
 coffecart.taqc.js.cypress/
 ├── cypress/
