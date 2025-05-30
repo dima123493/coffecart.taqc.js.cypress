@@ -38,8 +38,7 @@ This will install all required packages listed in package.json and create the no
 ```bash
 cp .env.example .env
 ```
-
-# Edit the `.env` file to fill in the actual values
+ Edit the `.env` file to fill in the actual values
 
 🧪 Running Tests
 | Command                                 | Description                                                                            |
