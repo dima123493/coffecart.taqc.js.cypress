@@ -6,7 +6,6 @@ import { PaymentTestData as Data } from '@tests/data/payment-test-data';
 const menuPage = new MenuPage();
 const paymentModal = new PaymentModal();
 const successModal = new SuccessfulModal();
-cy.allure().feature('Verify Payment Form Accepts Valid Inputs Feature');
 describe('Verify Payment Form Accepts Valid Inputs', () => {
     beforeEach(() => {
         cy.allure().step('Visit website', true);
