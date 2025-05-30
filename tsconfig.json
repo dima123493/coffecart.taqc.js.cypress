@@ -9,7 +9,8 @@
     "strict": true,
     "paths": {
       "@pages/*": ["cypress/pages/*"],
-      "@modal/*": ["cypress/modal/*"]
+      "@modal/*": ["cypress/modal/*"],
+      "@tests/*": ["tests/*"]
     }
   },
   "include": ["cypress/**/*.ts","tests/**/*.ts"]
