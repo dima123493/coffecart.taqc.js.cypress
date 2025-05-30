@@ -41,13 +41,15 @@ cp .env.example .env
  Edit the `.env` file to fill in the actual values
 
 ## 🧪 Running Tests
-| Command                                 | Description                                                                            |
-| --------------------------------------- | -------------------------------------------------------------------------------------- |
-| `npx cypress open`                      | Opens Cypress Test Runner UI. Choose "E2E Testing" and start tests.                    |
-| `npx cypress run`                       | Runs all tests in **headless** mode (useful for CI pipelines).                         |
-| `npx cypress run --headed`              | Runs all tests in **headed** mode (visible browser).                                   |
-| `npx cypress run --spec "path/to/file"` | Runs a specific spec file. Example: `npx cypress run --spec "cypress/e2e/login.cy.ts"` |
-| `npm test`                              | Alias for running `npx cypress run`.                                                   |
+| Command                                   | Description                                                                      |
+| ---------------------------------------- |----------------------------------------------------------------------------------|
+| `npm run cy:open`                        | Opens Cypress Test Runner UI. Choose "E2E Testing" and start tests.              |
+| `npm run cy:run`                         | Runs all tests in **headless** mode (useful for CI pipelines).                   |
+| `npm run cy:run:headed`                  | Runs all tests in **headed** mode (visible browser).                             |
+| `npm run cy:run:spec -- "path/to/file"`  | Runs a specific spec file. Example: `npm run cy:run:spec -- tests/sample.cy.ts"` |
+| `npm test`                               | Alias for running `cypress run`.                                                 |
+| `npm run allure:generate`                | Generates Allure report in `allure-report` folder.                               |
+| `npm run allure:open`                    | Opens Allure report in the browser.                                              |
 
 ## 📁 Project Structure
 ```aiignore
@@ -66,8 +68,3 @@ coffecart.taqc.js.cypress/
 ## 📊 (Optional) Allure Report Integration
 
 Allure reporting is already pre-configured.
-To generate and open Allure reports after test runs:
-```bash
-npm run allure:generate
-npm run allure:open
-```
