@@ -1,5 +1,9 @@
-import {MenuPage} from "../cypress/pages/menu-page";
-import {CartPage} from "../cypress/pages/cart-page";
+
+// @ts-ignore
+import {CartPage} from '@pages/cart-page';
+// @ts-ignore
+import {MenuPage} from '@pages/menu-page';
+
 
 
 describe('Increase Items in Cart', () => {
@@ -7,7 +11,7 @@ describe('Increase Items in Cart', () => {
     const cartPage = new CartPage();
 
     beforeEach(() => {
-        cy.visit('https://coffee-cart.app/');
+            cy.visit('/');
     });
 
     it('Verify that user can increase the number of items in the Cart', () => {

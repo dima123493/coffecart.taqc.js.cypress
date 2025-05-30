@@ -5,8 +5,12 @@
     "types": ["jest", "cypress", "cypress-xpath", "node"],
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*": ["cypress/pages/*"],
+      "@modal/*": ["cypress/modal/*"]
+    }
   },
-  "include": ["cypress/**/*.ts","tests/**/*.ts"]
+  "include": ["cypress/**/*.ts", "tests/**/*.ts"]
 }
-
