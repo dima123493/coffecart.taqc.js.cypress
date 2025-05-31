@@ -21,12 +21,11 @@ export class MenuPage {
             .click();
     }
 
-    verifyPaymentModalAppears(){
-        return cy.xpath(this.PAYMENT_MODAL).should('be.visible');
+    getPaymentModal() {
+        return cy.xpath(this.PAYMENT_MODAL);
     }
 
-    verifyTotalButtonText(expectedText: string): void {
-        cy.xpath(this.TOTAL_BUTTON)
-            .should('have.text', expectedText);
+    getTotalButton() {
+        return cy.xpath(this.TOTAL_BUTTON);
     }
 }
