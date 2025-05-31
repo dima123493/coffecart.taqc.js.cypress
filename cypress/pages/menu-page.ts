@@ -5,8 +5,6 @@ export class MenuPage {
     private readonly getDrinkButtonXpath = (drinkName: string): string =>
         `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
     private readonly DRINK_TITLE = 'h4';
-    private readonly TOTAL_BUTTON = '#app > div:nth-child(3) > div.pay-container > button';
-    private readonly PAYMENT_MODAL = '#app > div:nth-child(3) > div.modal > div';
     private cartIcon = "//a[@aria-label='Cart page']";
 
     visit(): void {
@@ -30,7 +28,6 @@ export class MenuPage {
     getTotalButton() {
         return cy.xpath(this.TOTAL_BUTTON);
     }
-}
 
     goToCartPage() {
         cy.xpath(this.cartIcon).click();
@@ -39,4 +36,6 @@ export class MenuPage {
     goToMenuPage() {
         cy.visit('https://coffee-cart.app/');
     }
+
+
 }
