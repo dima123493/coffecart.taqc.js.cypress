@@ -5,23 +5,27 @@ export class CartPage {
     private cartAmountLocator = "//*[@id='app']/ul/li[2]/a";
     private plusButtonLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/div/button[1]";
 
-    getTotalPrice() {
+    getTotalPrice(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.totalPriceLocator);
     }
 
-    getTotalButton() {
+    getTotalButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.totalButtonLocator);
     }
 
-    getCartData() {
+    getCartData(): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.xpath(this.cartDataLocator);
     }
 
-    getCartAmount() {
+    getCartAmount(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.cartAmountLocator);
     }
 
-    clickPlusButton() {
+    clickPlusButton(): void {
         cy.xpath(this.plusButtonLocator).click();
+    }
+
+    clickTotalButton(): void{
+        cy.xpath(this.totalButtonLocator).click();
     }
 }
