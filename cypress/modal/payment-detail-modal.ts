@@ -3,21 +3,21 @@ export class PaymentModal {
     private readonly EMAIL_INPUT = '#email';
     private readonly SUBMIT_BUTTON = '#submit-payment';
 
-    enterName(name: string): Cypress.Chainable {
+    enterName(name: string): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get(this.NAME_INPUT)
             .should('be.visible')
             .clear()
             .type(name);
     }
 
-    enterEmail(email: string): Cypress.Chainable {
+    enterEmail(email: string): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get(this.EMAIL_INPUT)
             .should('be.visible')
             .clear()
             .type(email);
     }
 
-    clickSubmit(): Cypress.Chainable {
+    clickSubmit(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.get(this.SUBMIT_BUTTON)
             .should('be.enabled')
             .click();

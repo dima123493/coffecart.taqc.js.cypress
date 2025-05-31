@@ -1,4 +1,9 @@
 export class MenuPage {
+    private readonly TOTAL_BUTTON = '//*[@class="pay"]';
+    private readonly PAYMENT_MODAL = '//*[@class="modal"]/div';
+
+    private readonly getDrinkButtonXpath = (drinkName: string): string =>
+        `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
     private readonly DRINK_TITLE = 'h4';
     private readonly TOTAL_BUTTON = '#app > div:nth-child(3) > div.pay-container > button';
     private readonly PAYMENT_MODAL = '#app > div:nth-child(3) > div.modal > div';
@@ -9,24 +14,21 @@ export class MenuPage {
     }
 
     clickOnDrink(drinkName: string): void {
-        cy.contains(this.DRINK_TITLE, drinkName)
-            .should('be.visible')
-            .click();
+        cy.xpath(this.getDrinkButtonXpath(drinkName)).should('be.visible').click()
     }
 
     clickTotalButton(): void {
-        cy.get(this.TOTAL_BUTTON)
+        cy.xpath(this.TOTAL_BUTTON)
             .should('be.enabled')
             .click();
     }
 
-    verifyPaymentModalAppears(): Cypress.Chainable {
-        return cy.get(this.PAYMENT_MODAL).should('be.visible');
+    getPaymentModal() {
+        return cy.xpath(this.PAYMENT_MODAL);
     }
 
-    verifyTotalButtonText(expectedText: string): void {
-        cy.get(this.TOTAL_BUTTON)
-            .should('have.text', expectedText);
+    getTotalButton() {
+        return cy.xpath(this.TOTAL_BUTTON);
     }
 }
 
