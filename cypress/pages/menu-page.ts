@@ -2,7 +2,7 @@ import 'cypress-xpath';
 
 export class MenuPage {
     private readonly TOTAL_BUTTON = '//*[@class="pay"]';
-    private readonly PAYMENT_MODAL = '//*[@class=\'modal\']/div';
+    private readonly PAYMENT_MODAL = '//*[@class="modal"]/div';
 
     private readonly getDrinkButtonXpath = (drinkName: string): string =>
         `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
