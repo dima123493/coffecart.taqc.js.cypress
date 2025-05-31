@@ -30,6 +30,7 @@
     "@types/cypress": "^0.1.6",
     "@types/jest": "^29.5.14",
     "@types/node": "^22.15.24",
+    "allure-commandline": "^2.34.0",
     "cypress": "^14.4.0",
     "cypress-xpath": "^2.0.1",
     "typescript": "^5.8.3"
