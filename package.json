@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/UA-1378-TAQC/coffecart.taqc.js.cypress#readme",
   "devDependencies": {
+    "@cypress/xpath": "^2.0.3",
     "@shelex/cypress-allure-plugin": "^2.41.2",
     "@types/cypress": "^0.1.6",
     "@types/jest": "^29.5.14",

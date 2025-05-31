@@ -1,5 +1,6 @@
+import 'cypress-xpath';
+
 export class MenuPage {
-    private readonly DRINK_TITLE = 'h4';
     private readonly TOTAL_BUTTON = '#app > div:nth-child(3) > div.pay-container > button';
     private readonly PAYMENT_MODAL = '#app > div:nth-child(3) > div.modal > div';
 
@@ -8,9 +9,8 @@ export class MenuPage {
     }
 
     clickOnDrink(drinkName: string): void {
-        cy.contains(this.DRINK_TITLE, drinkName)
-            .should('be.visible')
-            .click();
+        const xpath = `//*[@id='app']/div[2]/ul/li/h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
+        cy.xpath(xpath).should('be.visible').click();
     }
 
     clickTotalButton(): void {
@@ -19,7 +19,7 @@ export class MenuPage {
             .click();
     }
 
-    verifyPaymentModalAppears(): Cypress.Chainable {
+    verifyPaymentModalAppears(){
         return cy.get(this.PAYMENT_MODAL).should('be.visible');
     }
 
