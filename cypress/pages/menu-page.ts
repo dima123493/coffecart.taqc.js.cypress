@@ -1,11 +1,11 @@
 export class MenuPage {
     private readonly TOTAL_BUTTON = '//*[@class="pay"]';
     private readonly PAYMENT_MODAL = '//*[@class="modal"]/div';
+    private readonly CART_ICON = "//a[@aria-label='Cart page']";
 
     private readonly getDrinkButtonXpath = (drinkName: string): string =>
         `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
-    private readonly DRINK_TITLE = 'h4';
-    private cartIcon = "//a[@aria-label='Cart page']";
+
 
     visit(): void {
         cy.visit('/');
@@ -30,12 +30,7 @@ export class MenuPage {
     }
 
     goToCartPage() {
-        cy.xpath(this.cartIcon).click();
+        cy.xpath(this.CART_ICON).click();
     }
-
-    goToMenuPage() {
-        cy.visit('https://coffee-cart.app/');
-    }
-
 
 }

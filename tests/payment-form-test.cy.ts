@@ -3,11 +3,15 @@ import {PaymentModal} from '@modal/payment-detail-modal';
 import {SuccessfulModal} from '@modal/successful-modal';
 import { PaymentTestData as Data } from '@tests/data/payment-test-data';
 
-const menuPage = new MenuPage();
-const paymentModal = new PaymentModal();
-const successModal = new SuccessfulModal();
 describe('Verify Payment Form Accepts Valid Inputs', () => {
+    let menuPage: MenuPage;
+    let paymentModal: PaymentModal;
+    let successModal: SuccessfulModal;
+
     beforeEach(() => {
+        menuPage = new MenuPage();
+        paymentModal = new PaymentModal();
+        successModal = new SuccessfulModal();
         cy.allure().step('Visit website', true);
         menuPage.visit();
     });

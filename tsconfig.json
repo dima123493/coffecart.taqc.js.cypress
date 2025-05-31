@@ -16,6 +16,7 @@
   "include": [
     "cypress/**/*.ts",
     "tests/**/*.ts",
-    "node_modules/cypress/types/jquery/JQuery.d.ts"
+    "node_modules/cypress/types/jquery/JQuery.d.ts",
+    "node_modules/cypress/types/mocha/index.d.ts"
   ]
 }
