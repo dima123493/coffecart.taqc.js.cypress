@@ -2,7 +2,7 @@ import {CartPage} from '@pages/cart-page';
 import {MenuPage} from '@pages/menu-page';
 import {ItemsInCartData as Data} from '@tests/data/increase-items-in-cart-data.cy';
 
-describe('Increase Items in Cart', () => {
+describe.only('Increase Items in Cart', () => {
     const menuPage = new MenuPage();
     const cartPage = new CartPage();
 
