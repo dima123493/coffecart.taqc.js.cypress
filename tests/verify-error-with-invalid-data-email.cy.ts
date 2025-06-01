@@ -28,7 +28,7 @@ describe('Verify Invalid Email Formats In Payment Form', () => {
         cy.allure().step('Test invalid email without "@"');
         paymentModal.enterEmail('viktoriia11gmail.com');
         paymentModal.clickSubmit();
-        // Check that we're still on the payment form (form didn't submit successfully)
+
         cy.get('#email').should('be.visible');
         cy.get('#name').should('have.value', 'Viktoriia');
 
