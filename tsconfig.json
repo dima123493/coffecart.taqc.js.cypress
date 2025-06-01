@@ -1,11 +1,22 @@
 {
   "compilerOptions": {
+    "baseUrl": "./",
     "target": "ES6",
     "lib": ["es6", "dom"],
-    "types": ["jest","cypress", "node"],
+    "types": ["jest","cypress", "cypress-xpath", "node"],
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "paths": {
+      "@pages/*": ["cypress/pages/*"],
+      "@modal/*": ["cypress/modal/*"],
+      "@tests/*": ["tests/*"]
+    }
   },
-  "include": ["cypress/**/*.ts","tests/**/*.ts"]
+  "include": [
+    "cypress/**/*.ts",
+    "tests/**/*.ts",
+    "node_modules/cypress/types/jquery/JQuery.d.ts",
+    "node_modules/cypress/types/mocha/index.d.ts"
+  ]
 }
