@@ -4,6 +4,7 @@ export class CartPage {
     private cartDataLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/span";
     private cartAmountLocator = "//*[@id='app']/ul/li[2]/a";
     private plusButtonLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/div/button[1]";
+    private emptyTextLocator = "//*[contains(text(),\"No coffee, go add some.\")]";
 
     getTotalPrice() {
         return cy.xpath(this.totalPriceLocator);
@@ -23,5 +24,9 @@ export class CartPage {
 
     clickPlusButton() {
         cy.xpath(this.plusButtonLocator).click();
+    }
+
+    getEmptyText() {
+        return cy.xpath(this.emptyTextLocator);
     }
 }
