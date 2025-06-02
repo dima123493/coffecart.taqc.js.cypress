@@ -30,16 +30,17 @@ export class CartPage {
 
     clickTotalButton(): void{
         cy.xpath(this.totalButtonLocator).click();
+    }
 
-    getTotalPriceOfItem(){
+    getTotalPriceOfItem(): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.xpath(this.totalPriceOfItem);
     }
 
-    clickMinusButton(){
+    clickMinusButton(): void{
         cy.xpath(this.minusButtonLocator).click();
     }
 
-    cartStatus(){
-        return cy.xpath(this.noCoffeeGoAddSome)
+    cartStatus(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.xpath(this.noCoffeeGoAddSome);
     }
 }
