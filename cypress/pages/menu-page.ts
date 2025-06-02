@@ -2,6 +2,7 @@ export class MenuPage {
     private readonly TOTAL_BUTTON = '//*[@class="pay"]';
     private readonly PAYMENT_MODAL = '//*[@class="modal"]/div';
     private readonly CART_ICON = "//a[@aria-label='Cart page']";
+    private readonly SUCCESSFUL_POPUP = "//div[contains(@class,'snackbar success')]";
 
     private readonly getDrinkButtonXpath = (drinkName: string): string =>
         `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
@@ -21,16 +22,24 @@ export class MenuPage {
             .click();
     }
 
-    getPaymentModal() {
+    getPaymentModal(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.PAYMENT_MODAL);
     }
 
-    getTotalButton() {
+    getTotalButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.TOTAL_BUTTON);
     }
 
-    goToCartPage() {
+    goToCartPage(): void {
         cy.xpath(this.CART_ICON).click();
+    }
+
+    getCartNavLink(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.xpath(this.CART_ICON);
+    }
+
+    getSuccessfulPopup(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.xpath(this.SUCCESSFUL_POPUP);
     }
 
 }

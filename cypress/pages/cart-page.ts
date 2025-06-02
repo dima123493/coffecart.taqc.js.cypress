@@ -10,31 +10,35 @@ export class CartPage {
     private noCoffeeGoAddSome = "//*[@id='app']/div[2]/p";
     private totalPriceOfItem = "//*[@id='app']/div[2]/div/ul/li[2]/div[3]";
 
-    getTotalPrice() {
+    getTotalPrice(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.totalPriceLocator);
     }
 
-    getTotalButton() {
+    getTotalButton(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.totalButtonLocator);
     }
 
-    getCartData() {
+    getCartData(): Cypress.Chainable<JQuery<HTMLElement>>{
         return cy.xpath(this.cartDataLocator);
     }
 
-    getCartAmount() {
+    getCartAmount(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.cartAmountLocator);
     }
 
-    getTotalPriceOfItem(){
-        return cy.xpath(this.totalPriceOfItem);
-    }
-
-    clickPlusButton() {
+    clickPlusButton(): void {
         cy.xpath(this.plusButtonLocator).click();
     }
 
-    clickMinusButton(){
+    clickTotalButton(): void{
+        cy.xpath(this.totalButtonLocator).click();
+    }
+
+    getTotalPriceOfItem(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.xpath(this.totalPriceOfItem);
+    }
+
+    clickMinusButton(): void{
         cy.xpath(this.minusButtonLocator).click();
     }
 
@@ -46,11 +50,11 @@ export class CartPage {
         cy.xpath(this.minusButtonTotalPopUpLocator).click();
     }
 
-    cartStatus(){
-        return cy.xpath(this.noCoffeeGoAddSome)
-    }
-
     mouseOverTotalButton() {
         cy.xpath(this.totalButtonLocator).trigger('mouseover');
+    }
+
+    cartStatus(): Cypress.Chainable<JQuery<HTMLElement>>{
+        return cy.xpath(this.noCoffeeGoAddSome);
     }
 }
