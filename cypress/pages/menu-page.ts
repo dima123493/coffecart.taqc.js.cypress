@@ -1,3 +1,5 @@
+import {LuckyDayPopup} from '@component/lucky-day-popup'
+
 export class MenuPage {
     private readonly TOTAL_BUTTON = '//*[@class="pay"]';
     private readonly PAYMENT_MODAL = '//*[@class="modal"]/div';
@@ -7,6 +9,7 @@ export class MenuPage {
     private readonly getDrinkButtonXpath = (drinkName: string): string =>
         `//h4[normalize-space(text())='${drinkName}']/following-sibling::*[1]`;
 
+    public readonly luckyDayPopup = new LuckyDayPopup();
 
     visit(): void {
         cy.visit('/');
@@ -34,11 +37,20 @@ export class MenuPage {
         cy.xpath(this.CART_ICON).click();
     }
 
-    getCartNavLink(): Cypress.Chainable<JQuery<HTMLElement>>{
+    getCartCount(): Cypress.Chainable<number> {
+        return cy.xpath(this.CART_ICON)
+            .invoke('text')
+            .then((text: string) => {  // Явно вказуємо тип параметра
+                const match = text.match(/\((\d+)\)/);
+                return match ? parseInt(match[1]) : 0;
+            });
+    }
+
+    getCartNavLink(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.CART_ICON);
     }
 
-    getSuccessfulPopup(): Cypress.Chainable<JQuery<HTMLElement>>{
+    getSuccessfulPopup(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.SUCCESSFUL_POPUP);
     }
 
