@@ -31,7 +31,7 @@ jobs:
         run: npx cypress run || true # Додано '|| true' щоб workflow не падав, якщо тести не пройшли
 
       - name: Create empty allure-results directory if not exists
-        run: mkdir -p target/allure-results # Цей крок створює каталог, якщо його немає
+        run: mkdir -p allure-results # Цей крок створює каталог, якщо його немає
 
       - name: Generate Allure Report (npm script)
         run: npm run allure:generate # Якщо цей скрипт використовує allure generate, він має працювати
@@ -46,7 +46,7 @@ jobs:
       - name: Generate Allure Report (action)
         uses: simple-elf/allure-report-action@master
         with:
-          allure_results: target/allure-results
+          allure_results: allure-results
           allure_history: allure-history
           gh_pages: gh-pages
           allure_report: allure-report
