@@ -4,6 +4,9 @@ export class CartPage {
     private cartDataLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/span";
     private cartAmountLocator = "//*[@id='app']/ul/li[2]/a";
     private plusButtonLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/div/button[1]";
+    private minusButtonLocator = "//*[@id='app']/div[2]/div/ul/li[2]/div[2]/div/button[2]";
+    private noCoffeeGoAddSome = "//*[@id='app']/div[2]/p";
+    private totalPriceOfItem = "//*[@id='app']/div[2]/div/ul/li[2]/div[3]";
 
     getTotalPrice(): Cypress.Chainable<JQuery<HTMLElement>> {
         return cy.xpath(this.totalPriceLocator);
@@ -27,5 +30,16 @@ export class CartPage {
 
     clickTotalButton(): void{
         cy.xpath(this.totalButtonLocator).click();
+
+    getTotalPriceOfItem(){
+        return cy.xpath(this.totalPriceOfItem);
+    }
+
+    clickMinusButton(){
+        cy.xpath(this.minusButtonLocator).click();
+    }
+
+    cartStatus(){
+        return cy.xpath(this.noCoffeeGoAddSome)
     }
 }
