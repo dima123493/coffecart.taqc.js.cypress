@@ -23,15 +23,15 @@ describe('[TC7] Verification of pop-up cart functioning (buttons +/-)', () => {
         cartPage.mouseOverTotalButton();
 
         cy.allure().step('Click plus button, check total', false);
-        cartPage.clickPlusButton();
+        cartPage.clickPlusTotalButton();
         cartPage.getTotalButton().should('have.text', Data.TOTAL_2);
 
         cy.allure().step('Click minus button, check total', false);
-        cartPage.clickMinusButton();
+        cartPage.clickMinusTotalButton();
         cartPage.getTotalButton().should('have.text', Data.TOTAL_1);
 
         cy.allure().step('Click minus button, item disappears, total 0', false);
-        cartPage.clickMinusButton();
+        cartPage.clickMinusTotalButton();
         cartPage.getTotalButton().should('have.text', Data.TOTAL_0);
     });
 });
